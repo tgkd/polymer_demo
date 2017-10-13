@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./components/my-comp.html">
+<dom-module id="polymer_demo-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[greeting]]!</h2>
+    <my-comp></my-comp>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class Polymer_demoApp extends Polymer.Element {
+      static get is() { return 'polymer_demo-app'; }
+      static get properties() {
+        return {
+          greeting: {
+            type: String,
+            value: 'man'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(Polymer_demoApp.is, Polymer_demoApp);
+  </script>
+</dom-module>
